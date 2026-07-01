@@ -49,7 +49,7 @@ filmlens-recommender/
 │
 ├── movie_recommendation_train.py   # Data preprocessing + model training script
 ├── movie_recommender_streamlit.py  # Streamlit web application
-├── secrets.toml.example            # Template for your local OMDb API key (copy → .streamlit/secrets.toml)
+├── .env                            # Local env template — DO NOT commit real keys here (see Setup, step 5)
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -57,7 +57,7 @@ filmlens-recommender/
 
 > **Note:** `tmdb_5000_movies.csv`, `tmdb_5000_credits.csv`, `movie_dict.pkl`, and `similarity.pkl` are **not included** in this repository due to GitHub file-size limits. See setup instructions below to generate them locally.
 >
-> **Security note:** No API key is stored in this repo. `movie_recommender_streamlit.py` loads the OMDb key from Streamlit secrets or an environment variable at runtime — see step 5 below.
+> **Security note:** No real API key is stored in this repo — `.env` currently holds only a placeholder. `movie_recommender_streamlit.py` loads the OMDb key via `python-dotenv`, Streamlit secrets, or an environment variable at runtime. See step 5 below before adding your real key.
 
 ---
 
@@ -88,22 +88,34 @@ python movie_recommendation_train.py
 This creates `movie_dict.pkl` and `similarity.pkl` locally (both are `.gitignore`-excluded since they're too large for GitHub).
 
 ### 5. Set up your OMDb API key
-Posters are fetched live from the [OMDb API](https://www.omdbapi.com/apikey.aspx) (free tier available). The app never hardcodes a key — it reads from Streamlit secrets first, then falls back to an environment variable, so it's safe to keep this repo public.
+Posters are fetched live from the [OMDb API](https://www.omdbapi.com/apikey.aspx) (free tier available). The app never hardcodes a key — it reads from Streamlit secrets first, then an environment variable (which can come from a local `.env` file), so it's safe to keep this repo public.
 
-**Local development:**
+**⚠️ Important — fix the tracked `.env` file first, one time only:**
+This repo currently has an `.env` file committed with a placeholder value. Before adding your real key, stop tracking it so Git never picks up your actual credentials:
 ```bash
-mkdir -p .streamlit
-cp secrets.toml.example .streamlit/secrets.toml
-# then edit .streamlit/secrets.toml and paste in your real key
+git rm --cached .env
+echo ".env" >> .gitignore
+git commit -am "Stop tracking .env"
+git push
 ```
 
-**Or, using an environment variable instead:**
+**Then, for local development:**
+```bash
+# .env (already exists locally after the steps above — just edit it)
+OMDB_API_KEY=your_real_key_here
+```
+`load_dotenv()` in `movie_recommender_streamlit.py` picks this up automatically — no manual export needed.
+
+**Or, using a plain environment variable instead of `.env`:**
 ```bash
 export OMDB_API_KEY="your_omdb_api_key_here"      # macOS/Linux
 setx OMDB_API_KEY "your_omdb_api_key_here"        # Windows
 ```
 
-**Deploying to Streamlit Community Cloud:** add `OMDB_API_KEY` under your app's **Settings → Secrets** in the same TOML format as `secrets.toml.example`.
+**Deploying to Streamlit Community Cloud:** add `OMDB_API_KEY` under your app's **Settings → Secrets** as:
+```toml
+OMDB_API_KEY = "your_real_key_here"
+```
 
 ### 6. Launch the app
 ```bash
@@ -143,5 +155,4 @@ This project is open-source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Chowdri Furkhan**
-
 🔗 [LinkedIn](https://www.linkedin.com/in/chowdri-furkhan/) · [GitHub](https://github.com/Chowdri-Furkhan07)
