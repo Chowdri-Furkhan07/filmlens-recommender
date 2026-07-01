@@ -1,1 +1,19 @@
+# Large data & model files (excluded due to GitHub size limits)
+tmdb_5000_movies.csv
+tmdb_5000_credits.csv
+movie_dict.pkl
+similarity.pkl
 
+# Secrets
+.streamlit/secrets.toml
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS / Editor
+.DS_Store
+.vscode/
