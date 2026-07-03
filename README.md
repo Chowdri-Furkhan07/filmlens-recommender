@@ -1,4 +1,4 @@
-# 🎬 CineMatch — Content-Based Movie Recommendation Engine
+# 🎬 CineMatch - Content-Based Movie Recommendation Engine
 
 CineMatch is a content-based movie recommender system that suggests the top 5 most similar movies to any film a user picks. It uses NLP feature engineering on movie metadata (overview, genres, keywords, cast, and director) combined with **CountVectorizer** and **cosine similarity** to compute similarity scores across ~4,800 movies from the TMDB 5000 dataset. The recommendations are served through a custom-themed, dark-mode **Streamlit** web app with live poster fetching via the OMDb API.
 
