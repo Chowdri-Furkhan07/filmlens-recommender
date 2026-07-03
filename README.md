@@ -16,8 +16,8 @@ CineMatch is a content-based movie recommender system that suggests the top 5 mo
 
 - **Content-based filtering** - recommends movies based on plot overview, genres, keywords, top 3 cast members, and director rather than user ratings/history.
 - **Vectorized similarity search** - Bag-of-Words vectorization (5,000 max features, English stop-words removed) + cosine similarity for fast nearest-neighbor lookup.
-- **Live poster fetching** — pulls movie posters dynamically from the OMDb API at request time.
-- **Custom Streamlit UI** — dark, cinematic theme with a hero header, styled movie cards, and a responsive 5-column results grid.
+- **Live poster fetching** - pulls movie posters dynamically from the OMDb API at request time.
+- **Custom Streamlit UI** - dark, cinematic theme with a hero header, styled movie cards, and a responsive 5-column results grid.
 - **Cached data loading** — uses `st.cache_data` so the ~4,800 x 4,800 similarity matrix loads once per session.
 
 ---
