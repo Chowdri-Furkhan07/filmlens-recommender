@@ -34,7 +34,7 @@ CineMatch is a content-based movie recommender system that suggests the top 5 mo
 4. **Tag creation** - overview + genres + keywords + cast + crew are combined into a single `tags` string per movie.
 5. **Vectorization** - `CountVectorizer(max_features=5000, stop_words='english')` converts tags into numerical vectors.
 6. **Similarity computation** - `cosine_similarity` computes a similarity score between every pair of movies.
-7. **Recommendation** — for a selected movie, the 5 highest-scoring (non-self) movies are returned.
+7. **Recommendation** - for a selected movie, the 5 highest-scoring (non-self) movies are returned.
 
 ---
 
