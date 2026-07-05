@@ -24,8 +24,8 @@ CineMatch is a content-based movie recommender system that suggests the top 5 mo
 
 ## 🧠 How It Works
 
-1. **Data merge** — `tmdb_5000_movies.csv` and `tmdb_5000_credits.csv` are merged on `title`.
-2. **Feature selection** — Keeps `movie_id`, `title`, `overview`, `genres`, `keywords`, `cast`, `crew`.
+1. **Data merge** - `tmdb_5000_movies.csv` and `tmdb_5000_credits.csv` are merged on `title`.
+2. **Feature selection** - Keeps `movie_id`, `title`, `overview`, `genres`, `keywords`, `cast`, `crew`.
 3. **Feature engineering**:
    - `genres` / `keywords` → extracted from JSON-like strings via `ast.literal_eval`.
    - `cast` → top 3 billed actors only.
