@@ -90,7 +90,7 @@ This creates `movie_dict.pkl` and `similarity.pkl` locally (both are `.gitignore
 ### 5. Set up your OMDb API key
 Posters are fetched live from the [OMDb API](https://www.omdbapi.com/apikey.aspx) (free tier available). The app never hardcodes a key - it reads from Streamlit secrets first, then an environment variable (which can come from a local `.env` file), so it's safe to keep this repo public.
 
-**⚠️ Important — fix the tracked `.env` file first, one time only:**
+**⚠️ Important - fix the tracked `.env` file first, one time only:**
 This repo currently has an `.env` file committed with a placeholder value. Before adding your real key, stop tracking it so Git never picks up your actual credentials:
 ```bash
 git rm --cached .env
