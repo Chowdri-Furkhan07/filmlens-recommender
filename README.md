@@ -57,7 +57,7 @@ filmlens-recommender/
 
 > **Note:** `tmdb_5000_movies.csv`, `tmdb_5000_credits.csv`, `movie_dict.pkl`, and `similarity.pkl` are **not included** in this repository due to GitHub file-size limits. See setup instructions below to generate them locally.
 >
-> **Security note:** No real API key is stored in this repo — `.env` currently holds only a placeholder. `movie_recommender_streamlit.py` loads the OMDb key via `python-dotenv`, Streamlit secrets, or an environment variable at runtime. See step 5 below before adding your real key.
+> **Security note:** No real API key is stored in this repo - `.env` currently holds only a placeholder. `movie_recommender_streamlit.py` loads the OMDb key via `python-dotenv`, Streamlit secrets, or an environment variable at runtime. See step 5 below before adding your real key.
 
 ---
 
