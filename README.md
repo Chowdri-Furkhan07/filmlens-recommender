@@ -104,7 +104,7 @@ git push
 # .env (already exists locally after the steps above — just edit it)
 OMDB_API_KEY=your_real_key_here
 ```
-`load_dotenv()` in `movie_recommender_streamlit.py` picks this up automatically — no manual export needed.
+`load_dotenv()` in `movie_recommender_streamlit.py` picks this up automatically - no manual export needed.
 
 **Or, using a plain environment variable instead of `.env`:**
 ```bash
