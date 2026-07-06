@@ -49,7 +49,7 @@ filmlens-recommender/
 │
 ├── movie_recommendation_train.py   # Data preprocessing + model training script
 ├── movie_recommender_streamlit.py  # Streamlit web application
-├── .env                            # Local env template — DO NOT commit real keys here (see Setup, step 5)
+├── .env                            # Local env template - DO NOT commit real keys here (see Setup, step 5)
 ├── requirements.txt
 ├── .gitignore
 └── README.md
